@@ -1,0 +1,8 @@
+version: '3'
+services:
+  airband:
+    build: .
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    volumes:
+      - ./rtl_airband.conf:/usr/local/etc/rtl_airband.conf
