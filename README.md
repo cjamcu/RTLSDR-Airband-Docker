@@ -10,7 +10,7 @@ This Dockerfile is designed to run the RTLSDR-Airband service inside a Docker co
 To use this Dockerfile, follow these steps:
 
 1. Install [Docker](https://www.docker.com/products/docker-desktop) and [Docker Compose](https://docs.docker.com/compose/install/).
-2. Clone the repository containing the `docker-compose.yml` file: `git clone https://github.com/cjamcu/RTLSDR-Airband-Docker.git.git`
+2. Clone the repository containing the `docker-compose.yml` file: `git clone https://github.com/cjamcu/RTLSDR-Airband-Docker.git`
 3. Navigate into the cloned directory: `cd RTLSDR-Airband-Docker`
 4. Create a new file called `rtl_airband.conf` and configure the settings according to your needs (refer to the [RTLSDR-Airband documentation](https://github.com/charlie-foxtrot/RTLSDR-Airband/wiki) for details).
 5. Run the following command to start the service: `docker-compose up -d`
