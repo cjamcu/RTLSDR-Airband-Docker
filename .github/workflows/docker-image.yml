@@ -7,13 +7,10 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: docker login
       env:
         DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -21,8 +18,8 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rtlsdr-airband:$(date +%s)
+      run: |
+        TAG=$(date +%s)
+        docker build . --file Dockerfile --tag cjamcu/rtlsdr-airband:$TAG
     - name: Docker Push
-      run: docker push cjamcu/rtlsdr-airband
-      
-
+      run: docker push cjamcu/rtlsdr-airband:$TAG
