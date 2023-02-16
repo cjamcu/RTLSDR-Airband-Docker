@@ -19,7 +19,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
       run: |
-        TAG=$(date +%s)
+        TAG=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
         docker build . --file Dockerfile --tag cjamcu/rtlsdr-airband:$TAG
     - name: Docker Push
       run: docker push cjamcu/rtlsdr-airband:$TAG
