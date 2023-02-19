@@ -19,4 +19,4 @@ RUN wget -O RTLSDR-Airband-X.Y.Z.tar.gz "https://github.com/charlie-foxtrot/RTLS
     make && \
     make install
 
-CMD /usr/local/bin/rtl_airband -e -c /usr/local/etc/rtl_airband.conf
+CMD /usr/local/bin/rtl_airband -f -e -c /usr/local/etc/rtl_airband.conf
